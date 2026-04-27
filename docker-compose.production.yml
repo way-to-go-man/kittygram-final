@@ -1,5 +1,3 @@
-version: '3.3'
-
 volumes:
   pg_data:
   static:
@@ -27,7 +25,8 @@ services:
     image: iwanttobeataco/kittygram_frontend:latest
     container_name: frontend
     volumes:
-      - static:/app/result_build/
+      - static:/static/
+    entrypoint: /bin/sh -c "cp -r /app/build/. /static/ && exit 0"
     depends_on:
       - backend
 
