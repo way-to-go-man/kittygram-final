@@ -14,7 +14,7 @@ services:
       - pg_data:/var/lib/postgresql/data
 
   backend:
-    image: way-to-go-man/kittygram_backend:latest
+    image: iwanttobeataco/kittygram_backend:latest
     container_name: backend
     env_file: .env
     volumes:
@@ -24,7 +24,7 @@ services:
       - db
 
   frontend:
-    image: way-to-go-man/kittygram_frontend:latest
+    image: iwanttobeataco/kittygram_frontend:latest
     container_name: frontend
     volumes:
       - static:/app/result_build/
@@ -32,7 +32,7 @@ services:
       - backend
 
   gateway:
-    image: way-to-go-man/kittygram_gateway:latest
+    image: iwanttobeataco/kittygram_gateway:latest
     container_name: gateway
     ports:
       - "9000:80"
